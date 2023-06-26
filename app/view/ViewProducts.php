@@ -15,7 +15,7 @@ class ViewProducts
                             <div class='card-header'>
                                 <h3 class='card-title'>Produtos</h3>
                                 <div class='card-options'>
-                                    <a href='./form-produto.html' class='btn btn-azure'>Adicionar</a>
+                                    <a href='./produtos/adicionar' class='btn btn-azure'>Adicionar</a>
                                 </div>
                             </div>
                             <div class='table-responsive'>
@@ -33,15 +33,15 @@ class ViewProducts
                                         </tr>
                                     </thead>
                                     <tbody>";
-        foreach ($products as $product) {
+                                        foreach ($products as $product) {
             $html .= "
                                         <tr>
                                             <td><span class='text-muted'>" . $product['PROID'] . "</span></td>
                                             <td>" . $product['PRODESCRICAO'] . "</td>
+                                            <td>" . $product['PROVALORUNI'] . "</td>
                                             <td>" . $product['PROESTOQUE'] . "</td>
-                                            <td>" . $product['PROVALOR'] . "</td>
-                                            <td>" . $product[''] . "</td>
-                                            <td>" . $product[''] . "</td>
+                                            <td>" . $product['PRODATAVENDA'] . "</td>
+                                            <td>" . $product['PROTOTVENDA'] . "</td>
                                             <td>
                                                 <a class='icon' href='./form-produto-edit.html'>
                                                     <i class='fe fe-edit'></i>
@@ -53,7 +53,7 @@ class ViewProducts
                                                 </a>
                                             </td>
                                         </tr>";
-        }
+                                        }
         $html .= "
                                     </tbody>
                                 </table>

@@ -2,71 +2,29 @@
 
 namespace App\Db;
 
-class Connection {
+class Connection
+{
+    /**
+     * Realiza e retorna uma instância da conexão com o MySQL
+     * @return \mysqli|null
+     */
+    public static function get()
+    {
+        static $connection;
 
-    private $nome;
-    private $host;
-    private $usuario;
-    private $senha;
+        if (!isset($connection)) {
+            $host     = $_ENV['DB_HOST']     ?? 'localhost';
+            $database = $_ENV['DB_NAME']     ?? 'tabler';
+            $username = $_ENV['DB_USERNAME'] ?? 'root';
+            $password = $_ENV['DB_PASSWORD'] ?? '';
 
-    private $timeZone;
-    private $conexao;
-    private $query;
+            $connection = new \mysqli($host, $username, $password, $database);
 
-    function __construct($sNome = 'avaliação', $sHost = 'localhost', $sUsuario = 'root', $sSenha = '') {
-        $this->nome    = $sNome;
-        $this->host    = $sHost;
-        $this->usuario = $sUsuario;
-        $this->senha   = $sSenha;
-    }
-
-    public function setConexao() {
-        if(!empty($this->host) && !empty($this->usuario)) {
-            if (@$this->conexao = mysqli_connect($this->host, $this->usuario, $this->senha)) {
-                mysqli_select_db($this->conexao, $this->nome);
-
-                mysqli_query($this->conexao, 'SET character_set_connection=utf8');
-                mysqli_query($this->conexao, 'SET character_set_client=utf8');
-                mysqli_query($this->conexao, 'SET character_set_results=utf8');
-
-                $nOffset = -10800;
-                $this->timeZone = sprintf('Etc/GMT+%s', ($nOffset / 3600 * -1));
-
-                date_default_timezone_set($this->timeZone);
-
-                $this->query(sprintf("SET time_zone = '%s'", date('P')));
-                date_default_timezone_set($this->timeZone);
-            } else {
-                echo 'Nosso banco de dados não está respondendo à solicitação de acesso, já estamos verificando. Por favor aguarde!';
-            }
-        } else {
-            echo 'not working';
-        }
-    }
-
-    public function query($sSql, $bReturn = false) {
-        if($rQry = mysqli_query($this->conexao, $sSql)) {
-            if($bReturn) {
-                return $rQry;
-            } else {
-                $this->query = $rQry;
+            if ($connection->connect_error) {
+                die('Erro na conexão: ' . $connection->connect_error);
             }
         }
-    }
 
-    public function getQuery() {
-        return $this->query;
-    }
-
-    public function closeConexao() {
-        mysqli_close($this->conexao);
-    }
-
-    public function getArrayResults() {
-        $aReturn = [];
-        while ($aDados = mysqli_fetch_array($this->query, MYSQLI_ASSOC)) {
-            $aReturn[] = $aDados;
-        }
-        return $aReturn;
+        return $connection;
     }
 }

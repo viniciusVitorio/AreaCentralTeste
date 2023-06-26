@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b8891f1-81da-48be-9205-d3428b0031c8" name="Changes" comment="" />
+    <list default="true" id="2b8891f1-81da-48be-9205-d3428b0031c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controller/ControllerProductsAdd.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/ModelPadrao.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/ViewProductsAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/ControllerProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ControllerProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/ModelProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ModelProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/ViewHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/ViewProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +20,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -19,17 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/viniv/Desktop/AreaCentralTeste",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/viniv/Desktop/AreaCentralTeste&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="AreaCentralTeste" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
@@ -54,10 +68,22 @@
       <workItem from="1687655614146" duration="12708000" />
       <workItem from="1687706642292" duration="301000" />
       <workItem from="1687706970320" duration="7016000" />
+      <workItem from="1687745624594" duration="7413000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

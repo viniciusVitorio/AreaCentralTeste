@@ -25,17 +25,19 @@ class ViewHeader
               <link rel='icon' href='./favicon.ico' type='image/x-icon' />
               <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
               <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+              <link href='app/view/assets/css/dashboard.css' rel='stylesheet' />
               <title>Area Central -  $title</title>
               <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
               <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext'>
               <script src='app/view/assets/js/require.min.js'></script>
+              <link href='/app/view/assets/css/dashboard.css' rel='stylesheet' />
               <script>
                 requirejs.config({
                   baseUrl: '.'
                 });
               </script>
               <!-- Dashboard Core -->
-              <link href='app/view/assets/css/dashboard.css' rel='stylesheet' />
+              
               <script src='app/view/assets/js/dashboard.js'></script>
               <!-- c3.js Charts Plugin -->
               <link href='app/view/assets/plugins/charts-c3/plugin.css' rel='stylesheet' />
