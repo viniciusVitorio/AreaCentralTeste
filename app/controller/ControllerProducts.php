@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Model\ModelPadrao;
-use App\Model\ModelProducts;
 use App\View\ViewProducts,
+    App\Model\ModelProducts,
     App\View\ViewHeader;
+use App\View\ViewProductsEdit;
 
 class ControllerProducts
 {
@@ -23,4 +23,54 @@ class ControllerProducts
 
         return $content;
     }
+
+    public function processInsert()
+    {
+        $ModelProducts = new ModelProducts();
+
+        $descricao = $_POST['descricao'];
+        $estoque = $_POST['estoque'];
+        $valorUnid = $_POST['valorUni'];
+
+        $ModelProducts->descricao = $descricao;
+        $ModelProducts->estoque = $estoque;
+        $ModelProducts->ValorUni = $valorUnid;
+
+        $ModelProducts->InsertProduct();
+
+        header("Location: /produtos");
+    }
+
+    public function processDelete()
+    {
+        $id =  $_GET['id'] ??= '';
+
+        $ModelProduct = new ModelProducts();
+        $ModelProduct->id = $id;
+
+        $ModelProduct->DeleteProduct();
+
+        header("Location: /produtos");
+    }
+
+    public function processEdit()
+    {
+        $ModelProducts = new ModelProducts();
+
+        $id = $_GET['id'] ??= '';
+
+        $descricao = $_POST['descricao'];
+        $estoque = $_POST['estoque'];
+        $valorUnid = $_POST['valorUni'];
+
+        $ModelProducts->id        = $id;
+        $ModelProducts->descricao = $descricao;
+        $ModelProducts->estoque   = $estoque;
+        $ModelProducts->ValorUni  = $valorUnid;
+
+        $ModelProducts->EditProduct();
+
+        header("Location: /produtos");
+    }
+
 }

@@ -15,7 +15,7 @@ class ViewProducts
                             <div class='card-header'>
                                 <h3 class='card-title'>Produtos</h3>
                                 <div class='card-options'>
-                                    <a href='./produtos/adicionar' class='btn btn-azure'>Adicionar</a>
+                                    <a href='./adicionar' class='btn btn-azure'>Adicionar</a>
                                 </div>
                             </div>
                             <div class='table-responsive'>
@@ -43,12 +43,12 @@ class ViewProducts
                                             <td>" . $product['PRODATAVENDA'] . "</td>
                                             <td>" . $product['PROTOTVENDA'] . "</td>
                                             <td>
-                                                <a class='icon' href='./form-produto-edit.html'>
+                                                <a class='icon' href='/editar?id=". $product['PROID'] ."'>
                                                     <i class='fe fe-edit'></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <a class='icon' href='javascript:void(0)'>
+                                                <a class='icon' href='/produtos/excluir?id=". $product['PROID'] ."'>
                                                     <i class='fe fe-trash'></i>
                                                 </a>
                                             </td>
