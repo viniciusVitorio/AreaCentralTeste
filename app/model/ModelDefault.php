@@ -10,7 +10,7 @@ abstract class ModelDefault
     {
         $connection = Connection::get();
 
-        $SQL = 'SELECT * FROM ' . $this->getTableName()  . ' WHERE PROEXCLUIDO = 0 OR PROEXCLUIDO IS NULL';
+        $SQL = 'SELECT * FROM ' . $this->getTableName()  . ' WHERE PROEXCLUIDO = 0';
 
         $result = mysqli_query($connection, $SQL);
 
@@ -49,10 +49,6 @@ abstract class ModelDefault
         return mysqli_query($oConnection, $SQL);
     }
 
-    public function edit()
-    {
-
-    }
 
     protected function prepareValue($value)
     {
@@ -87,15 +83,18 @@ abstract class ModelDefault
         $connection = Connection::get();
 
         $setValues = [];
+
         foreach ($values as $column => $value) {
             $column = mysqli_real_escape_string($connection, $column);
             $value = mysqli_real_escape_string($connection, $value);
-            $setValues[] = "{$column} = '{$value}'";
+            $setValues[] = "$column = '$value'";
         }
+
         $setValues = implode(',', $setValues);
 
         $id = mysqli_real_escape_string($connection, $id);
-        $SQL = "UPDATE " . $this->getTableName() . " SET {$setValues} WHERE PROID = '{$id}'";
+
+        $SQL = "UPDATE " . $this->getTableName() . " SET $setValues WHERE PROID = '$id'";
 
         $result = mysqli_query($connection, $SQL);
 
@@ -115,7 +114,7 @@ abstract class ModelDefault
                   FROM  TBVENDAS
                   JOIN ' . $this->getTableName()  . '
                     ON tbvendas.PROID = tbprodutos.PROID 
-                 LIMIT 10;
+                 LIMIT 5;
         ';
 
         $result = mysqli_query($connection, $SQL);
@@ -129,5 +128,79 @@ abstract class ModelDefault
         return $data;
     }
 
+    protected function UpdateProductAfterSell($quantity, $valTot, $SellDate, $ProductId)
+    {
+        $connection = Connection::get();
 
+        $SQL = "  UPDATE tbprodutos 
+                   SET PRODATAVENDA = '$SellDate', 
+                         PROESTOQUE = PROESTOQUE - $quantity, 
+                        PROTOTVENDA = PROTOTVENDA + $valTot 
+                        WHERE PROID = '$ProductId'";
+
+        mysqli_query($connection, $SQL);
+    }
+
+    function GetCountProducts()
+    {
+        $connection = Connection::get();
+
+        $SQL = "SELECT COUNT(*) FROM " . $this->getTableNameProd();
+
+        $Result = mysqli_query($connection, $SQL);
+        $row = mysqli_fetch_array($Result);
+
+        return $row[0];
+    }
+
+    function GetCountSells()
+    {
+        $connection = Connection::get();
+
+        $SQL = "SELECT COUNT(*) FROM " . $this->getTableNameSell();
+
+        $Result = mysqli_query($connection, $SQL);
+        $row = mysqli_fetch_array($Result);
+
+        return $row[0];
+    }
+
+    function selectDeletes()
+    {
+        $connection = Connection::get();
+
+        $SQL = "SELECT * FROM ". $this->getTableName() . " WHERE PROEXCLUIDO = 1";
+
+        $result = mysqli_query($connection, $SQL);
+
+        $data = [];
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+
+        return $data;
+    }
+
+    function restore($id)
+    {
+        $Connection = Connection::get();
+
+        $SQL = "UPDATE TBPRODUTOS 
+                   SET PROEXCLUIDO = 0 
+                 WHERE PROID = $id";
+
+        return mysqli_query($Connection, $SQL);
+    }
+
+    function updateValUni($productId, $valUni)
+    {
+        $Connection = Connection::get();
+
+        $SQL = "UPDATE TBPRODUTOS
+                   SET PROVALORUNI = $valUni
+                 WHERE PROID = $productId";
+
+        return mysqli_query($Connection, $SQL);
+    }
 }

@@ -6,7 +6,7 @@ function render($sPage)
 {
     switch ($sPage) {
         case '/':
-            return 'Produtos: 0 Vendas: 0';
+            return(new App\Controller\ControllerHome())->render();
 
         case '/produtos':
             return (new App\Controller\ControllerProducts())->render();
@@ -30,7 +30,13 @@ function render($sPage)
             return (new App\Controller\ControllerSell())->render();
 
         case '/venda/confirmar':
-            return (new App\Controller\ControllerSell())->processInsert();
+            return (new App\Controller\ControllerSell())->processSell();
+
+        case '/excluidos':
+            return (new App\Controller\ControllerDeletes())->render();
+
+        case '/Restaurar':
+            return (new App\Controller\ControllerDeletes())->processRestore();
     }
 
     return 'Página não encontrada!';

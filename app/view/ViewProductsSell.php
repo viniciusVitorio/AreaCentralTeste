@@ -60,7 +60,7 @@ class ViewProductsSell
                                                 <div class='form-label'>&nbsp;</div>
                                                 <div class='custom-controls-stacked'>
                                                     <label class='custom-control custom-checkbox'>
-                                                        <input type='checkbox' class='custom-control-input' name='example-checkbox1' value='option1' checked>
+                                                        <input type='checkbox' class='custom-control-input' name='atualizaValorUnitario' value='option1' checked>
                                                         <span class='custom-control-label'>Atualizar valor unitário do produto</span>
                                                     </label>
                                                 </div>
@@ -70,7 +70,7 @@ class ViewProductsSell
                                 </div>
                                 <div class='card-footer text-left' style='display: flex; justify-content: space-between'>
                                     <div>
-                                        <a href='./produtos.html' class='btn btn-secondary'>Voltar para produtos</a>
+                                        <a href='./produtos' class='btn btn-secondary'>Voltar para produtos</a>
                                     </div>
                                     <div>
                                         <button type='submit' class='btn btn-primary'>Confirmar</button>

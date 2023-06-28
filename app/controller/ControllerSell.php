@@ -17,6 +17,7 @@ class ControllerSell
 
         $productsSell = $modelProducts->SelectJoin();
 
+
         $title = 'Produtos Venda';
 
         $content = ViewHeader::getHTMLHeader($title);
@@ -27,23 +28,36 @@ class ControllerSell
         return $content;
     }
 
-        public function processInsert()
+        public function processSell()
     {
-        $ModelSell = new ModelSell();
+        $ModelSell  = new ModelSell();
+        $modelProducts = new ModelProducts();
 
         $productId  = $_POST['produto'];
         $quantity   = $_POST['quantidade'];
         $valUni     = $_POST['valorUni'];
         $valTot     = $valUni * $quantity;
+        $SellDate   = date('d/m/y');
+        $updateValUni = isset($_POST['atualizaValorUnitario']);
 
-        $ModelSell->product  = $productId;
-        $ModelSell->quantity = $quantity;
-        $ModelSell->ValUni   = $valUni;
-        $ModelSell->ValTot   = $valTot;
+        if ($updateValUni) {
+            $modelSell = new modelSell;
 
-        $ModelSell->InsertProduct();
+            $modelSell->updateProductValue($productId, $valUni);
+        }
 
-        header("Location: /venda");
+            $ModelSell->product = $productId;
+            $ModelSell->quantity = $quantity;
+            $ModelSell->ValUni = $valUni;
+            $ModelSell->ValTot = $valTot;
+
+            $ModelSell->ProcessSell();
+
+            $UpdateProduct = new ModelSell();
+
+            $UpdateProduct->UpdateProduct($quantity, $valTot, $SellDate, $productId);
+
+            header("Location: /venda");
     }
 
 }

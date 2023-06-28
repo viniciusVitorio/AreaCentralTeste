@@ -12,9 +12,9 @@ class ModelProducts extends ModelDefault
 
     function InsertProduct()
     {
-        $descricao = $this->descricao;
-        $estoque = $this->estoque;
-        $valorUnid = $this->ValorUni;
+        $descricao = $this->description;
+        $estoque = $this->stock;
+        $valorUnid = $this->valUni;
 
         return parent::Insert([
             'PRODESCRICAO' => $descricao,
@@ -33,9 +33,9 @@ class ModelProducts extends ModelDefault
     function EditProduct()
     {
         $id        = $this->id;
-        $descricao = $this->descricao;
-        $estoque   = $this->estoque;
-        $valorUnid = $this->ValorUni;
+        $descricao = $this->description;
+        $estoque   = $this->stock;
+        $valorUnid = $this->valUni;
 
         return parent::Update([
             'PRODESCRICAO' => $descricao,

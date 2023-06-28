@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8891f1-81da-48be-9205-d3428b0031c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controller/ControllerProductsEdit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/ControllerSell.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/model/ModelSell.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/ViewProductsEdit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/ViewProductsSell.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/assets/js/calculateTotalValue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AreaCentralSQL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/ControllerDeletes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/ControllerHome.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/ModelDelete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/ModelHome.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/ViewDeletes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/ViewHome.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/assets/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tabler.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/ControllerProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ControllerProducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/ControllerProductsAdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ControllerProductsAdd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/ModelPadrao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ModelDefault.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/ControllerSell.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ControllerSell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/ModelDefault.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ModelDefault.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/ModelProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ModelProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/ModelSell.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/ModelSell.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/ViewHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewHeader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/ViewProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewProducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/ViewProductsAdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewProductsAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/ViewProductsSell.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/ViewProductsSell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
     </list>
@@ -55,12 +59,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viniv\Desktop\AreaCentralTeste\app\model" />
+    </key>
   </component>
   <component name="RunManager" selected="PHP Script.Teste.php">
     <configuration name="AreaCentralTeste" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -98,6 +105,10 @@
       <workItem from="1687745624594" duration="30451000" />
       <workItem from="1687887608747" duration="722000" />
       <workItem from="1687888434588" duration="8843000" />
+      <workItem from="1687903802023" duration="21000" />
+      <workItem from="1687903824554" duration="16082000" />
+      <workItem from="1687972119207" duration="13000" />
+      <workItem from="1687972135586" duration="1303000" />
     </task>
     <servers />
   </component>

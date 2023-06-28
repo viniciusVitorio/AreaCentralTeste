@@ -9,7 +9,7 @@ class ModelSell extends ModelDefault
         return 'TBVENDAS';
     }
 
-    function InsertProduct()
+    function ProcessSell()
     {
         $productId = $this->product;
         $quantity  = $this->quantity;
@@ -23,5 +23,24 @@ class ModelSell extends ModelDefault
             'VENVALORTOTAL' => $valTot
         ]);
     }
+
+    function UpdateProduct($quantity, $valTot, $SellDate, $productId)
+    {
+        return parent::UpdateProductAfterSell(
+            $quantity,
+            $valTot,
+            $SellDate,
+            $productId
+        );
+    }
+
+    function updateProductValue($productId, $valUni)
+    {
+        return parent::UpdateValUni(
+            $productId,
+            $valUni
+        );
+    }
+
 
 }

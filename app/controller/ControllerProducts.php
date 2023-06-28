@@ -28,15 +28,18 @@ class ControllerProducts
     {
         $ModelProducts = new ModelProducts();
 
-        $descricao = $_POST['descricao'];
-        $estoque = $_POST['estoque'];
-        $valorUnid = $_POST['valorUni'];
+        $description = $_POST['descricao'];
+        $stock       = $_POST['estoque'];
+        $valUni      = $_POST['valorUni'];
 
-        $ModelProducts->descricao = $descricao;
-        $ModelProducts->estoque = $estoque;
-        $ModelProducts->ValorUni = $valorUnid;
+
+        $ModelProducts->description = $description;
+        $ModelProducts->stock = $stock;
+        $ModelProducts->valUni = $valUni;
 
         $ModelProducts->InsertProduct();
+
+        $_SESSION['success_message'] = 'Produto inserido com sucesso';
 
         header("Location: /produtos");
     }
@@ -50,6 +53,8 @@ class ControllerProducts
 
         $ModelProduct->DeleteProduct();
 
+        $_SESSION['success_message'] = 'Produto excluído com sucesso';
+
         header("Location: /produtos");
     }
 
@@ -59,14 +64,14 @@ class ControllerProducts
 
         $id = $_GET['id'] ??= '';
 
-        $descricao = $_POST['descricao'];
-        $estoque = $_POST['estoque'];
-        $valorUnid = $_POST['valorUni'];
+        $description = $_POST['descricao'];
+        $stock = $_POST['estoque'];
+        $valUni = $_POST['valorUni'];
 
         $ModelProducts->id        = $id;
-        $ModelProducts->descricao = $descricao;
-        $ModelProducts->estoque   = $estoque;
-        $ModelProducts->ValorUni  = $valorUnid;
+        $ModelProducts->description = $description;
+        $ModelProducts->stock   = $stock;
+        $ModelProducts->valUni  = $valUni;
 
         $ModelProducts->EditProduct();
 
