@@ -1,7 +1,5 @@
 <h1>Teste Área Central 💻</h1>
 
-<p>Descrição curta do projeto</p>
-
 <h2>Tecnologias Utilizadas 🛠️</h2>
 
 <ul>
